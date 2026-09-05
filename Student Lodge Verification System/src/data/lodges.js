@@ -20,7 +20,7 @@ export const LODGES = [
     water:'Borehole', power:'NEPA + Generator', security:'Gateman + Fence',
     tags:['🔒 Secure','💧 Borehole','⚡ Gen Backup'], bg:'linear-gradient(135deg,#1B3A6B,#2563EB)',
     photos:[
-      '/lodges/vinwell lodge main.jpg'
+      'Student Lodge Verification System/public/lodges/vinwell lodge main.jpg'
     ],
     breakdown:{ Security:4.8, Water:5.0, Electricity:4.5, Cleanliness:4.7, Landlord:4.9, Value:4.3 },
     reviewList:[
@@ -39,7 +39,7 @@ export const LODGES = [
     rating:4.3, reviews:29, verified:true,
     water:'Tap + Borehole', power:'NEPA', security:'Locked Gate',
     tags:['💧 Water Reliable','🚶 3min to Gate','✅ Verified'], bg:'linear-gradient(135deg,#065F46,#059669)',
-    photos:['/lodges/lodge 2 jpg.jpg'],
+    photos:['/Student Lodge Verification System/public/lodges/lodge 2 jpg.jpg'],
     breakdown:{ Security:4.0, Water:4.5, Electricity:3.8, Cleanliness:4.4, Landlord:4.2, Value:4.6 },
     reviewList:[
       { id:1, name:'Ngozi A.', initials:'NA', level:'200L, Pharmacy',
@@ -50,11 +50,11 @@ export const LODGES = [
   {
     id:3, name:'Royal Peace Apartments',
     area:'Amawbia Road', address:'Amawbia Junction, Awka',
-    distance:'12 min', type:'Flat Share', priceBand:0,
+    distance:'40 min', type:'Flat Share', priceBand:0,
     rating:4.1, reviews:18, verified:false,
     water:'Buy Water', power:'NEPA + Generator', security:'Open Compound',
     tags:['🏠 Flat Share','⚡ Gen Backup','💰 Budget'], bg:'linear-gradient(135deg,#6D28D9,#8B5CF6)',
-    photos:[ '/lodges/lodge 4.jpg'],
+    photos:[ 'Student Lodge Verification System/public/lodges/lodge 4.jpg'],
     breakdown:{ Security:3.2, Water:3.5, Electricity:4.2, Cleanliness:3.9, Landlord:3.8, Value:5.0 },
     reviewList:[
       { id:1, name:'Chiamaka O.', initials:'CO', level:'100L, Arts',
@@ -65,11 +65,11 @@ export const LODGES = [
   {
     id:4, name:'Divine Mercy Hostel',
     area:'Behind Main Gate', address:'Okafor Lane, Behind UNIZIK Gate',
-    distance:'4 min', type:'Self-Contained', priceBand:1,
+    distance:'20 min', type:'Self-Contained', priceBand:1,
     rating:2.5, reviews:33, verified:true,
     water:'Borehole', power:'NEPA + Generator', security:'Gateman ',
     tags:['📷 CCTV','💧 Borehole','⚡ Gen Backup'], bg:'linear-gradient(135deg,#1E3A5F,#2E5F9E)',
-    photos:['/lodges/lodge 3faulty.jpg'],
+    photos:['/Student Lodge Verification System/public/lodges/lodge 3faulty.jpg'],
     breakdown:{ Security:3.0, Water:4.8, Electricity:3.5, Cleanliness:4.3, Landlord:1.4, Value:1.0 },
     reviewList:[
       { id:1, name:'Blessing E.', initials:'BE', level:'300L, Nursing',
@@ -84,7 +84,7 @@ export const LODGES = [
     rating:3.9, reviews:22, verified:true,
     water:'Borehole', power:'NEPA', security:'Locked Gate',
     tags:['💧 Borehole','🏠 Single Rooms','🔑 Locked Gate'],bg:'linear-gradient(135deg,#134E4A,#0F766E)',
-    photos:['/lodges/PA Fabin lodge.jpg'],
+    photos:['Student Lodge Verification System/public/lodges/PA Fabin lodge.jpg'],
     breakdown:{ Security:3.8, Water:4.5, Electricity:3.2, Cleanliness:3.9, Landlord:4.0, Value:4.8 },
     reviewList:[
       { id:1, name:'Sandra I.', initials:'SI', level:'200L, Education',
@@ -99,7 +99,7 @@ export const LODGES = [
     rating:3.6, reviews:11, verified:false,
     water:'Borehole', power:'Prepaid Meter', security:'Gateman',
     tags:['🛁 Self-Con','💧 Borehole','📊 Prepaid'], bg:'linear-gradient(135deg,#92400E,#D97706)',
-    photos:['/lodges/prince and princess lodge.jpg'],
+    photos:['Student Lodge Verification System/public/lodges/prince and princess lodge.jpg'],
     breakdown:{ Security:4.0, Water:4.2, Electricity:3.5, Cleanliness:3.2, Landlord:3.0, Value:3.5 },
     reviewList:[
       { id:1, name:'Tochukwu M.', initials:'TM', level:'400L, Accountancy',
