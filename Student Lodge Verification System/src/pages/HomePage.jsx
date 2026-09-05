@@ -43,7 +43,7 @@ export default function HomePage({ go, lodges = [] }) {
               ))}
             </div>
             <div className="hero__stats">
-              {[['340+','Lodges Listed'],['1,200+','Student Reviews'],['4.3★','Average Rating']].map(([v,l]) => (
+              {[['10+','Lodges Listed'],['1,10+','Student Reviews'],['4.3★','Average Rating']].map(([v,l]) => (
                 <div key={l}>
                   <strong>{v}</strong>
                   <span>{l}</span>

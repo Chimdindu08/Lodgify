@@ -19,21 +19,28 @@ export default function BrowsePage({ go, lodges = [] }) {
   const [band, setBand] = useState(-1)   // -1 = all bands
   const [view, setView] = useState('grid')
 
- const list = useMemo(() => {
+const list = useMemo(() => {
+  const q_lower = q.toLowerCase().trim()
+
   return [...lodges]
-      .filter(l => area === 'All Areas' || l.area === area)
-      .filter(l => type === 'All Types' || l.type === type)
-      .filter(l => band === -1 || l.priceBand === band)
-      .filter(l => !q ||
-        l.name.toLowerCase().includes(q.toLowerCase()) ||
-        l.address.toLowerCase().includes(q.toLowerCase())
+    .filter(l => {
+      // Search filter — only apply when query is not empty
+      if (q_lower === '') return true
+      return (
+        l.name.toLowerCase().includes(q_lower) ||
+        l.address.toLowerCase().includes(q_lower) ||
+        l.area.toLowerCase().includes(q_lower)
       )
-      .sort((a, b) => {
-        if (sort === 'Highest Rated') return b.rating - a.rating
-        if (sort === 'Most Reviewed') return b.reviews - a.reviews
-        return a.name.localeCompare(b.name)
-      })
-  }, [q, area, type, sort, band])
+    })
+    .filter(l => area === 'All Areas' || l.area === area)
+    .filter(l => type === 'All Types' || l.type === type)
+    .filter(l => band === -1 || l.priceBand === band)
+    .sort((a, b) => {
+      if (sort === 'Highest Rated') return b.rating - a.rating
+      if (sort === 'Most Reviewed') return b.reviews - a.reviews
+      return a.name.localeCompare(b.name)
+    })
+}, [q, area, type, sort, band, lodges])
 
   const hasFilters = area !== 'All Areas' || type !== 'All Types' || band !== -1 || q
 

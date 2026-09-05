@@ -1,8 +1,8 @@
 export const PRICE_BANDS = [
-  { label:'Budget',   desc:'<=₦100k/yr', color:'#ECFDF5', text:'#065F46', border:'#BBF7D0', max:100000  },
-  { label:'Moderate', desc:'<= ₦200k/yr', color:'#EFF6FF', text:'#1D4ED8', border:'#BFDBFE', max:200000  },
-  { label:'Premium',  desc:'<= ₦400k/yr', color:'#FFFBEB', text:'#92400E', border:'#FDE68A', max:300000  },
-  { label:'Luxury',   desc:'<= 500k+/yr',    color:'#FDF4FF', text:'#7E22CE', border:'#E9D5FF', max:Infinity},
+  { label:'Budget',   desc:'<=₦300k/yr', color:'#ECFDF5', text:'#065F46', border:'#BBF7D0', max:100000  },
+  { label:'Moderate', desc:'<= ₦400k/yr', color:'#EFF6FF', text:'#1D4ED8', border:'#BFDBFE', max:200000  },
+  { label:'Premium',  desc:'<= ₦500k/yr', color:'#FFFBEB', text:'#92400E', border:'#FDE68A', max:300000  },
+  { label:'Luxury',   desc:'<= 700k+/yr',    color:'#FDF4FF', text:'#7E22CE', border:'#E9D5FF', max:Infinity},
 ]
 
 export const getBand = (i) => PRICE_BANDS[i] ?? PRICE_BANDS[0]

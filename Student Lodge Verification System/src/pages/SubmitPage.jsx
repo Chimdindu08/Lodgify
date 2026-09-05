@@ -4,6 +4,7 @@
     <button onClick={() => go('home')} style={{ marginTop:16, padding:'10px 24px', background:'#1B3A6B', color:'#fff', borderRadius:10 }}>← Back Home</button>
   </div>
 }*/
+
 import { useState } from 'react'
 import { AREAS, TYPES, PRICE_BANDS } from '../data/lodges'
 import Stars from '../components/Stars'
@@ -122,12 +123,40 @@ export default function SubmitPage({ go, showToast, addLodge }) {
 
   const selBand = PRICE_BANDS[form.priceBand]
 
+ // Simulate auth — replace with real auth check when you add a backend
+const isLoggedIn = false  // change to true after login is implemented
+
+if (!isLoggedIn) {
   return (
-    <div className="submit">
-      <div className="container submit__inner">
-        <button className="submit__back" onClick={() => go('browse')}>
-          ← Back to Lodges
+    <div className="submit__gate">
+      <div className="submit__gate-card">
+        <span className="submit__gate-icon">🔒</span>
+        <h2>Sign in to Submit a Lodge</h2>
+        <p>
+          You need a free NAU student account to submit lodge listings or write reviews.
+          Browsing is open to everyone — no account needed.
+        </p>
+        <button
+          className="submit__gate-btn"
+          onClick={() => go('login')}
+        >
+          Sign In or Register →
         </button>
+        <button
+          className="submit__gate-browse"
+          onClick={() => go('browse')}
+        >
+          Browse lodges without signing in
+        </button>
+      </div>
+    </div>
+  )
+}
+
+return (
+  <div className="submit">
+    <div className="container submit__inner">
+      <button className="submit__back" onClick={() => go('browse')}>← Back</button>
 
         <h1 className="submit__title">Submit a Lodge</h1>
         <p className="submit__sub">
