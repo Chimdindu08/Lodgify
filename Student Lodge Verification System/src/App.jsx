@@ -11,47 +11,42 @@ import AdminPage  from './pages/AdminPage'
 import { LODGES } from './data/lodges'
 
 export default function App() {
-  const [page,   setPage]   = useState('home')
-  const [lodge,  setLodge]  = useState(null)
-  const [toast,  setToast]  = useState(null)
-
-  // All lodges — starts with seed data, grows when students submit
-  const [allLodges, setAllLodges] = useState(LODGES)
-
-  // Called from SubmitPage when a student submits a new lodge
-  const addLodge = (newLodge) => {
-    setAllLodges(prev => [newLodge, ...prev])
-  }
+  const [page,       setPage]       = useState('home')
+  const [lodge,      setLodge]      = useState(null)
+  const [toast,      setToast]      = useState(null)
+  const [allLodges,  setAllLodges]  = useState(LODGES)
 
   const go = (p, l = null) => {
     setLodge(l)
     setPage(p)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+  const [user, setUser] = useState(null) // null = logged out
 
   const showToast = (msg, type = 'success') => {
     setToast({ msg, type, id: Date.now() })
+  }
+
+  const addLodge = (newLodge) => {
+    setAllLodges(prev => [newLodge, ...prev])
   }
 
   const pages = {
     home:   <HomePage   go={go} lodges={allLodges} />,
     browse: <BrowsePage go={go} lodges={allLodges} />,
     detail: <DetailPage go={go} lodge={lodge} showToast={showToast} />,
-    submit: <SubmitPage go={go} showToast={showToast} addLodge={addLodge} />,
-    login:  <LoginPage  go={go} />,
+    submit: <SubmitPage go={go} showToast={showToast} addLodge={addLodge} user={user} />,
+    login:  <LoginPage  go={go} showToast={showToast} setUser={setUser} />,
     admin:  <AdminPage  go={go} lodges={allLodges} />,
   }
 
   return (
-    <div style={{ display:'flex', flexDirection:'column', minHeight:'100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Navbar page={page} go={go} />
-
       <main style={{ flex: 1 }} className="page-enter" key={page}>
         {pages[page] || pages.home}
       </main>
-
       <Footer go={go} />
-
       {toast && (
         <Toast
           key={toast.id}

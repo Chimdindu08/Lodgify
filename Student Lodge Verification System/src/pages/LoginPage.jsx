@@ -1,4 +1,4 @@
-/*export default function LoginPage({ go }) {
+/*export default function LoginPage({ go, setUser }) {
   return <div style={{ padding: '60px 40px', textAlign:'center' }}>
     <h2>Login — coming next</h2>
     <button onClick={() => go('home')} style={{ marginTop:16, padding:'10px 24px', background:'#1B3A6B', color:'#fff', borderRadius:10 }}>← Back Home</button>
@@ -7,7 +7,7 @@
 import { useState } from 'react'
 import './LoginPage.css'
 
-export default function LoginPage({ go }) {
+export default function LoginPage({ go, setUser }) {
   const [mode,  setMode]  = useState('login')
   const [email, setEmail] = useState('')
   const [pass,  setPass]  = useState('')
@@ -92,7 +92,7 @@ export default function LoginPage({ go }) {
           )}
         </div>
 
-        <button className="login__submit" onClick={() => go('home')}>
+        <button className="login__submit" onClick={() => { setUser({ name: name || email, email, level }); go('submit') }}>
           {mode === 'login' ? 'Sign In →' : 'Create Account →'}
         </button>
 

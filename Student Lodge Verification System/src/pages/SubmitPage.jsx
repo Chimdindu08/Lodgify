@@ -13,7 +13,7 @@ import './SubmitPage.css'
 
 const STEPS = ['Lodge Info', 'Upload Photos', 'Rate It', 'Your Review']
 
-export default function SubmitPage({ go, showToast, addLodge }) {
+export default function SubmitPage({ go, showToast, addLodge, user }) {
   const [step,    setStep]    = useState(1)
   const [photos,  setPhotos]  = useState([])
   const [ratings, setRatings] = useState({
@@ -124,7 +124,7 @@ export default function SubmitPage({ go, showToast, addLodge }) {
   const selBand = PRICE_BANDS[form.priceBand]
 
  // Simulate auth — replace with real auth check when you add a backend
-const isLoggedIn = false  // change to true after login is implemented
+const isLoggedIn = !!user
 
 if (!isLoggedIn) {
   return (
