@@ -208,6 +208,12 @@
 @media (max-width: 990px) {
   .navbar__desktop { display: none; }
   .navbar__burger   { display: flex; }
+  .sidebar__bottom {
+    padding: 1px 12px 100px 12px;
+  }
+  .sidebar__top {
+    padding: 18px 16px 1px 16px;
+  }
 }
 
 @media (max-width: 400px) {
