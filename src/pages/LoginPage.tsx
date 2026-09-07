@@ -14,7 +14,11 @@ export default function LoginPage() {
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setBusy(true); setError("");
     const data = new FormData(event.currentTarget);
-    try { await login(String(data.get("email")), String(data.get("password"))); navigate((location.state as { from?: string } | null)?.from || "/history", { replace: true }); }
+    try {
+      const signedInUser = await login(String(data.get("email")), String(data.get("password")));
+      const requestedPage = (location.state as { from?: string } | null)?.from;
+      navigate(signedInUser.role === "admin" ? "/admin" : requestedPage || "/history", { replace: true });
+    }
     catch (err) { setError(err instanceof Error ? err.message : "Unable to sign in."); }
     finally { setBusy(false); }
   }

@@ -1,6 +1,6 @@
 # IfiteLodge frontend
 
-Responsive React/TypeScript interface for the public lodge directory, authentication, protected lodge submission, Cloudinary-backed photo uploads, and personal submission history. All interface icons use Lucide React.
+Responsive React/TypeScript interface for the public lodge directory, authentication, protected lodge submission, Cloudinary-backed photo uploads, personal submission history, and a role-protected administrator moderation dashboard. All interface icons use Lucide React.
 
 See the root `README.md` for complete setup and environment instructions.
 

@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 
 import Layout from "./components/Layout";
 import RequireAuth from "./components/RequireAuth";
+import RequireAdmin from "./components/RequireAdmin";
+import AdminPage from "./pages/AdminPage";
 import BrowsePage from "./pages/BrowsePage";
 import DetailPage from "./pages/DetailPage";
 import HistoryPage from "./pages/HistoryPage";
@@ -23,6 +25,9 @@ export default function App() {
         <Route element={<RequireAuth />}>
           <Route path="submit" element={<SubmitPage />} />
           <Route path="history" element={<HistoryPage />} />
+        </Route>
+        <Route element={<RequireAdmin />}>
+          <Route path="admin" element={<AdminPage />} />
         </Route>
 
         <Route

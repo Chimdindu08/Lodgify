@@ -1,4 +1,4 @@
-export type User = { id: string; fullName: string; email: string; level: string; createdAt?: string };
+export type User = { id: string; fullName: string; email: string; level: string; role: "student" | "admin"; createdAt?: string };
 export type AuthResponse = { token: string; user: User };
 
 export type Ratings = {
@@ -27,7 +27,11 @@ export type Lodge = {
   overallRating: number;
   photos: string[];
   author: { name: string; level: string };
+  status: "pending" | "published" | "rejected";
+  rejectionReason?: string;
+  moderatedAt?: string | null;
   createdAt: string;
 };
 
 export type LodgeList = { items: Lodge[]; total: number };
+export type AdminStats = { total: number; pending: number; published: number; rejected: number };
