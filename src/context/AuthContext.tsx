@@ -5,8 +5,8 @@ import type { AuthResponse, User } from "../lib/types";
 type AuthContextValue = {
   user: User | null;
   loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  register: (data: { fullName: string; email: string; password: string; level: string }) => Promise<void>;
+  login: (email: string, password: string) => Promise<User>;
+  register: (data: { fullName: string; email: string; password: string; level: string }) => Promise<User>;
   logout: () => void;
 };
 
@@ -27,6 +27,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const response = await api<AuthResponse>(path, { method: "POST", body: JSON.stringify(data) });
     tokenStore.set(response.token);
     setUser(response.user);
+    return response.user;
   }
 
   const value = useMemo<AuthContextValue>(() => ({
